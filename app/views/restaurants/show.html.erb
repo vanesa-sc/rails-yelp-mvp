@@ -1,0 +1,19 @@
+<h1> <%= @restaurant.name%></h1>
+<div class= 'd-flex, justify-content-center'>
+<h3> Adresse: <%= @restaurant.address%></h3>
+<h3> Contact:<%= @restaurant.phone_number%></h3>
+</div>
+
+
+
+
+<h4>Reviews</h4>
+
+<% @restaurant.reviews.each do |review| %>
+  <div><%= review.content %></div>
+  <div><%= review.rating %></div>
+
+<% end %>
+
+
+  <button><%= link_to "add reviews", new_restaurant_review_path(@restaurant) %></button>
